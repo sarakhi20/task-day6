@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Circle</title>
+  </head>
+  <body>
+    <h1>Circle</h1>
+    <input id="radius" type="number" placeholder="Enter radius">
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+
+    <script src="circle1.js"></script>
+    <script>
+      function calculate() {
+        var radius = document.getElementById("radius").value;
+        var circle = new Circle(radius);
+        var area = circle.area();
+        var circumference = circle.circumference();
+        document.getElementById("result").innerHTML = "Area: " + area + "<br>Circumference: " + circumference;
+      }
+    </script>
+  </body>
+</html>

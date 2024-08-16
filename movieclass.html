@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            movie
+        </title>
+    </head>
+    <body>
+        <h1>Movies</h1>
+        <input id="title" type="text" placeholder="Title">
+        <input id="studio" type="text" placeholder="Studio">
+        <input id="rating" type="text" placeholder="Rating">
+        <button onclick="createMovie()">Create Movie</button>
+        <ul id="movieList"></ul>
+    
+        <script src="classmovie.js"></script>
+        <script>
+          function createMovie() {
+            var title = document.getElementById("title").value;
+            var studio = document.getElementById("studio").value;
+            var rating = document.getElementById("rating").value;
+            var movie = new Movie(title, studio, rating);
+            var movieList = document.getElementById("movieList");
+            var listItem = document.createElement("li");
+            listItem.textContent = movie.title + " (" + movie.studio + ", " + movie.rating + ")";
+            movieList.appendChild(listItem);
+          }
+    </script>
+    
+    </body>
+</html>
